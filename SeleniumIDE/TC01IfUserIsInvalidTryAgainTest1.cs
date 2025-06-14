@@ -21,6 +21,14 @@ public class TC01IfUserIsInvalidTryAgainTest
     [SetUp]
     public void SetUp()
     {
+        ChromeOptions options = new ChromeOptions();
+        options.AddArgument("--headless"); // Run in headless mode
+        options.AddArgument("--no-sandbox");
+        options.AddArgument("--disable-dev-shm-usage");
+        options.AddArgument("--window-size=1552,832");
+        options.AddArgument("--disable-gpu");
+        
+
         driver = new ChromeDriver();
         js = (IJavaScriptExecutor)driver;
         vars = new Dictionary<string, object>();
