@@ -15,6 +15,9 @@ using NUnit.Framework;
 public class TC01IfUserIsInvalidTryAgainTest
 {
     private IWebDriver driver;
+    private ChromeOptions options;
+    // Dictionary to store variables
+
     public IDictionary<string, object> vars { get; private set; }
     private IJavaScriptExecutor js;
 
@@ -27,9 +30,9 @@ public class TC01IfUserIsInvalidTryAgainTest
         options.AddArgument("--disable-dev-shm-usage");
         options.AddArgument("--window-size=1552,832");
         options.AddArgument("--disable-gpu");
-        
 
-        driver = new ChromeDriver();
+
+        driver = new ChromeDriver(options);
         js = (IJavaScriptExecutor)driver;
         vars = new Dictionary<string, object>();
     }
